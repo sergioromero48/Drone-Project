@@ -12,6 +12,7 @@ from rules.none import NoDetectionRule
 from rules.search import SearchRule
 from rules.follow import FollowRule
 from rules.backoff import BackoffRule
+from typing import List
 
 class ExecutionState(str, Enum):
     Init           = "INIT"
@@ -28,7 +29,7 @@ class Core:
     vehicle: Vehicle = None
     camera: BaseCamera = None
     state: ExecutionState = ExecutionState.Init
-    rules: list[BaseRule] = []
+    rules: List[BaseRule] = []
 
     activeRule = 'n/a'
 

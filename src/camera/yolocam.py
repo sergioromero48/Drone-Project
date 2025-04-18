@@ -150,6 +150,7 @@ class YoloCamera(BaseCamera):
 
         # setting node configs
         self._stereo.setDefaultProfilePreset(dai.node.StereoDepth.PresetMode.HIGH_DENSITY)
+        self._stereo.setDepthAlign(dai.CameraBoardSocket.RGB)
 
         self._spatialDetectionNetwork.setBlobPath(BLOB_PATH)
         self._spatialDetectionNetwork.setConfidenceThreshold(DETECTION_THRESH)

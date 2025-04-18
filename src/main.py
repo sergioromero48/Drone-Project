@@ -35,11 +35,12 @@ class LoggerWriter:
 
     def write(self, msg):
         if msg.endswith('\n'):
-            self.buf.append(msg.removesuffix('\n'))
+            self.buf.append(msg[:-1])  # safely removes the trailing newline
             self.logfct(''.join(self.buf))
             self.buf = []
         else:
             self.buf.append(msg)
+
 
     def flush(self):
         pass
